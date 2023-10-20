@@ -1,5 +1,10 @@
 package lexicon.se.g46lecturejpa.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class AddressDaoImplTest {
-    // todo : implement the unit test for the address dao class
+    // todo: implement ...
+    @Autowired
+    AddressDaoImpl addressDao ;
+
 }
