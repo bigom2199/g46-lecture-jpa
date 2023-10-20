@@ -1,6 +1,7 @@
 package lexicon.se.g46lecturejpa.model;
 
 import jakarta.persistence.*;
+import lexicon.se.g46lecturejpa.entity.Address;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -38,7 +39,10 @@ import java.time.LocalDateTime;
 
      private boolean status;
      private LocalDate createDate ;
-
+     @Setter
+     @OneToOne
+     @JoinColumn(name = "address_id")
+   private Address address ;
     public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
