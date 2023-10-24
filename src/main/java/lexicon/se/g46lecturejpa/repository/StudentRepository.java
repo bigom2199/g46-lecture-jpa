@@ -1,5 +1,6 @@
 package lexicon.se.g46lecturejpa.repository;
 
+import lexicon.se.g46lecturejpa.entity.Course;
 import lexicon.se.g46lecturejpa.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -22,5 +23,8 @@ public interface StudentRepository extends JpaRepository<Student,String> {
    @Query("update Student S set s.status = true  where s.id = :id")
 
  void updateStudentStatusToTrue(@Param("studentId")String studentId);
+
+    List<Student> findByCourses_Id(Long courseId);
+  List<Student> findByCourses_CourseNameContains(String CourseName);
 
 }
