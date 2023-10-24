@@ -40,7 +40,7 @@ import java.time.LocalDateTime;
      private boolean status;
      private LocalDate createDate ;
      @Setter
-     @OneToOne
+     @OneToOne(cascade =CascadeType.ALL,fetch = FetchType.EAGER)
      @JoinColumn(name = "address_id")
    private Address address ;
     public Student(String firstName, String lastName, String email) {
